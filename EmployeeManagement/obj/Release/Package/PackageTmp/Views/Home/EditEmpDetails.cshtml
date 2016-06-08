@@ -1,0 +1,62 @@
+﻿@model EmployeeManagement.Models.tblEmp1
+
+@{
+    ViewBag.Title = "EditEmpDetails";
+}
+<div class="Index">
+<h2 class="text-center">Edit Employee Details</h2>
+
+@using (Html.BeginForm("EditEmpDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    <h4 class="text-center">Employee Details</h4>
+    <div class="form-group">
+        <table class="table">
+            @Html.HiddenFor(model => model.EmpID)
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpName,"Name:")</p></td>
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpName, new { required = "required" })</p></td>
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpDOB,"Date of Birth:")</p></td>
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpDOB, new { required = "required" })</p></td>
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpGender, "Gender:")</p></td>
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpGender, new { required = "required" })</p></td>
+
+            </tr>
+
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpEmail,"Email:")
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpEmail, new { required = "required" })
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpContactNo,"Contact No")
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpContactNo, new { required = "required" })
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpDeptName,"Department Name:")</p></td>
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpDeptName, new { required = "required" })</p></td>
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpSalary,"Salary")</p></td>
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpSalary, new { required = "required" })</p></td>
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpPhoto)</p></td>
+                <td><p class="tab-content">@Html.TextBoxFor(model => model.EmpPhoto, new { required = "required" })</p></td>
+                <td><p class="tab-content"><input type="file" name="file" id="file"/></p></td>
+            </tr>
+            
+    </table>  
+    </div>
+
+        <div class="form-group">                                           
+                <p class="text-center">@Html.ActionLink("Back to List", "Details", new { name = Model.EmpDeptName })                
+                    <input type="submit" value="Save" class="btn btn-primary tab-content" /></p>
+        </div>
+
+}
+</div>

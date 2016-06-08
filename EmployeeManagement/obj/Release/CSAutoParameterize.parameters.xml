@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\EMPSYS.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ankit\\Desktop\\Project2\\EmployeeManagement\\EmployeeManagement\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="EMPSYSEntities-Web.config Connection String" description="EMPSYSEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=SQL5026.Smarterasp.net;Initial Catalog=DB_9FEC35_EMPSYS;User Id=DB_9FEC35_EMPSYS_admin;Password=London09&quot; " tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ankit\\Desktop\\Project2\\EmployeeManagement\\EmployeeManagement\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EMPSYSEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,22 @@
+﻿@model EmployeeManagement.Models.tblDept
+
+@{
+    ViewBag.Title = "ADD";
+}
+<div class="Index">
+<h2 class="text-center">Add New Department.</h2>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+
+            <td><p class="tab-content">@Html.LabelFor(model => Model.DeptName, "Department Name")</p></td>
+
+            <td><p class="tab-content">@Html.EditorFor(model => model.DeptName)</p></td>
+        </tr>
+    </table>
+
+        <p class="text-center">@Html.ActionLink("Department List", "Index")<input type="submit" value="Add Department" class="btn btn-primary tab-content"/>
+        </p>
+}
+</div>

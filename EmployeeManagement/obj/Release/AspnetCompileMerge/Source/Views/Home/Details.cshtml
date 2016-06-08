@@ -1,0 +1,27 @@
+﻿@model IEnumerable<EmployeeManagement.Models.tblEmp>
+    
+@{
+    ViewBag.Title = "Details";
+}
+<div class="Index">
+    <h2 class="text-center">Employee Names</h2>
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><p class="tab-content">@Html.ActionLink(item.EmpName, "EmpDetails", new { Deptid = item.EmpDeptID, Empid = item.EmpID })</p></td>
+                <td><p class="tab-content">@Html.ActionLink("Delete", "DeleteEmp", new { id = item.EmpID })</p></td>
+            </tr>
+
+            @*<ul>
+                    <li><b>@Html.ActionLink(item.EmpName, "EmpDetails", new {Deptid = item.DeptID, Empid=item.EmpID })</b> |
+                    @Html.ActionLink("Delete", "DeleteEmp",new {id= item.EmpID })</li>
+                </ul>*@
+        }
+    </table>
+    <br />
+    <p class="text-center">@Html.ActionLink("Back to Department", "Index")<a class="tab-content">@Html.ActionLink("Add New Employee", "AddEmpDetails")</a></p>
+
+</div>
+

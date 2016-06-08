@@ -1,0 +1,44 @@
+﻿@model EmployeeManagement.Models.tblEmp
+
+@{
+    ViewBag.Title = "AddEmpDetails";
+}
+
+<div class="Index">
+<h2 class="text-center">Add Employee Details</h2>
+
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => Model.EmpName, "Employee Name:")</p></td>
+            <td><p class="tab-content">@Html.EditorFor(model => model.EmpName)</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => Model.EmpEmail, "Employee Email:")</p></td>
+            <td><p class="tab-content">@Html.EditorFor(model => model.EmpEmail)</p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => Model.EmpDeptID, "Department ID:")</p></td>
+            <td><p class="tab-content">@Html.EditorFor(model => model.EmpDeptID)</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => Model.EmpContactNo, "Employee Contact No:")</p></td>
+            <td><p class="tab-content">@Html.EditorFor(model => model.EmpContactNo)</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpPhoto)</p></td>
+            <td><p class="tab-content">@Html.EditorFor(model => model.EmpPhoto)</p></td>
+        </tr>
+        
+</table>
+    <div class="text-center">
+        @Html.ActionLink("Department List", "Index") 
+        <a class="tab-content" href='javascript:history.go(-1)'>Back to Employees.</a>
+        <input type="submit" value="Add Employee" class="btn btn-primary tab-content" />
+    </div>
+}
+</div>

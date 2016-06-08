@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="EmployeeManagement20160524120948" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Ankit\\Desktop\\Project2\\EmployeeManagement\\EmployeeManagement\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Ankit\\Desktop\\Project2\\EmployeeManagement\\EmployeeManagement\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="EmployeeDetailsEntities4-Web.config Connection String" description="" value="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=ANKIT;Initial Catalog=EmployeeDetails;Integrated Security=True&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ankit\\Desktop\\Project2\\EmployeeManagement\\EmployeeManagement\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EmployeeDetailsEntities4']/@connectionString" />
+  </parameter>
+</parameters>

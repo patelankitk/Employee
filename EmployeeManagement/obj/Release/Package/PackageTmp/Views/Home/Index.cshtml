@@ -1,0 +1,27 @@
+﻿@model IEnumerable<EmployeeManagement.Models.tblDept1>
+@using EmployeeManagement.Models;
+@{
+    ViewBag.Title = "Department List";
+}
+    @if (Session["LogedUserName"] != null)
+    {
+        <div class="Index">
+            <h3 class="text-center">Welcome @Session["LogedUserName"].ToString()</h3>
+            <h2 class="text-center">Department List</h2>
+
+            <table class="table">
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><p class="tab-content">@Html.ActionLink(item.DeptName, "Details", new { name = item.DeptName })</p></td>
+                        <td><p class="tab-content">@Html.ActionLink("Edit", "EditDept", new { id = item.DeptID })</p></td>
+                        <td><p class="tab-content">@Html.ActionLink("Delete", "DeleteDept", new { id = item.DeptID })</p></td>
+                    </tr>
+                }
+            </table>
+            <br />
+            <br />
+            <p class="text-center"><b>@Html.ActionLink("Add New", "ADD")</b></p>
+        </div>
+    }

@@ -1,0 +1,48 @@
+﻿@model EmployeeManagement.Models.tblEmp
+
+@{
+    ViewBag.Title = "EditEmpDetails";
+}
+<div class="Index">
+<h2 class="text-center">Edit Employee Details</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    <h4 class="text-center">Employee Details</h4>
+    <div class="form-group">
+        <table class="table">
+            @Html.HiddenFor(model => model.EmpID)
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpName)</p></td>
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpName)</p></td>
+            </tr>
+
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpEmail)
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpEmail)
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpDeptID)
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpDeptID)
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpContactNo)
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpContactNo)
+            </tr>
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.EmpPhoto)
+                <td><p class="tab-content">@Html.EditorFor(model => model.EmpPhoto)
+            </tr>
+            
+    </table>  
+    </div>
+
+        <div class="form-group">                                           
+                <p class="text-center">@Html.ActionLink("Back to List", "Details", new { id = Model.EmpDeptID })                
+                    <input type="submit" value="Save" class="btn btn-primary tab-content" /></p>
+        </div>
+
+}
+</div>

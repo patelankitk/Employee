@@ -1,0 +1,44 @@
+﻿@using EmployeeManagement.Models;
+
+@model IEnumerable<EmployeeManagement.Models.tblEmp1>
+
+@{
+    ViewBag.Title = "EmpDetails";
+}
+<div class="Index">
+    <h2 class="text-center">Employee Details</h2>
+
+    @foreach (var item in Model)
+    {
+
+            if (@item.EmpPhoto == null || @item.EmpPhoto == "")
+            {
+                <p class="text-center">@item.EmpName image not available.</p>
+            }
+            else
+            {
+                <p class="text-center"><img class="EmpImg" src="@Url.Content(@item.EmpPhoto)" alt="@item.EmpName"/></p>
+
+            }
+        <table class="table">
+        <tr><td><b class="tab-content">Employee ID:</b></td>        <td>@item.EmpID</td></tr>
+        <tr><td><b class="tab-content">Name: </b></td>              <td>@item.EmpName</td></tr>
+        <tr><td><b class="tab-content">DOB:(mm/dd/yyyy)</b></td>    <td>@item.EmpDOB</td></tr>
+        <tr><td><b class="tab-content">Gender:</b></td>             <td>@item.EmpGender</td></tr>
+        <tr><td><b class="tab-content">Email</b></td>               <td>@item.EmpEmail</td></tr>
+        <tr><td><b class="tab-content">Contact No:</b></td>         <td>@item.EmpContactNo</td></tr>
+        <tr><td><b class="tab-content">Department: </b></td>        <td>@item.EmpDeptName</td></tr>
+        <tr><td><b class="tab-content">Salary:</b></td>             <td>@item.EmpSalary</td></tr>
+        </table>
+
+        <div class="text-center">
+            @Html.ActionLink("Delete", "DeleteEmp", new { id = item.EmpID }) |
+            @Html.ActionLink("Back to Department", "Index") |
+            @Html.ActionLink("Back to Employee", "Details", new { name = item.EmpDeptName }) |
+            @Html.ActionLink("Edit", "EditEmpDetails", new { id = item.EmpID })
+        </div>
+    }
+    </div>
+
+
+

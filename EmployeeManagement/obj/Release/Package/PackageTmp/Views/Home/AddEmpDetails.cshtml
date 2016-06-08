@@ -1,0 +1,55 @@
+﻿@model EmployeeManagement.Models.tblEmp1
+
+@{
+    ViewBag.Title = "AddEmpDetails";
+}
+
+<div class="Index">
+<h2 class="text-center">Add Employee Details</h2>
+
+@using (Html.BeginForm("AddEmpDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="table">
+        
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpName, "Name:")</p></td>
+            <td><p class="tab-content">@Html.TextBoxFor(model => model.EmpName, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpDOB, "Date of Birth:")</p></td>
+            <td><p class="tab-content">@Html.TextBoxFor(model => model.EmpDOB, new { required = "required", Placeholder ="mm/dd/yyyy" })</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpGender, "Gender:")</p></td>
+            <td><p class="tab-content">@Html.DropDownList("Gender")</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpEmail,"Email:")</p></td>
+            <td><p class="tab-content">@Html.TextBoxFor(model => model.EmpEmail, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpContactNo,"Contact No:")</p></td>
+            <td><p class="tab-content">@Html.TextBoxFor(model => model.EmpContactNo, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpDeptName,"Department Name:")</p></td>
+            <td><p class="tab-content">@Html.DropDownList("DepartmentNames") </p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpSalary,"Salary:")</p></td>
+            <td><p class="tab-content">@Html.TextBoxFor(model => model.EmpSalary, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpPhoto)</p></td>
+            <td><p class="tab-content"><input type="file" name="file" id="file" /></p></td>
+        </tr>
+</table>
+    <div class="text-center">
+        @Html.ActionLink("Department List", "Index") 
+        <a class="tab-content" href='javascript:history.go(-1)'>Back to Employees.</a>
+        <input type="submit" value="Add Employee" class="btn btn-primary tab-content" />
+    </div>
+}
+</div>

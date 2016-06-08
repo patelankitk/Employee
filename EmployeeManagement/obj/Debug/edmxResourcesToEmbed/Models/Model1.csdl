@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMPSYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EMPSYSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblDept1" EntityType="EMPSYSModel.tblDept1" />
+    <EntitySet Name="tblEmp1" EntityType="EMPSYSModel.tblEmp1" />
+    <EntitySet Name="tblUser1" EntityType="EMPSYSModel.tblUser1" />
+  </EntityContainer>
+  <EntityType Name="tblDept1">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeptName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEmp1">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmpDOB" Type="DateTime" Precision="0" />
+    <Property Name="EmpGender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EmpEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmpContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmpDeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmpSalary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmpPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblUser1">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

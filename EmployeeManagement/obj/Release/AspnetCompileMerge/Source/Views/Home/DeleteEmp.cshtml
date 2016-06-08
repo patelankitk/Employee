@@ -1,0 +1,59 @@
+﻿@model EmployeeManagement.Models.tblEmp
+
+@{
+    ViewBag.Title = "DeleteEmp";
+}
+
+<div class="Index">
+<h2 class="text-center">Delete Employee</h2>
+
+<h3 class="text-center">Are you sure you want to delete this?</h3>
+<div>
+    <h4 class="text-center">Employee</h4>
+
+    @if (@Model.EmpPhoto == null || @Model.EmpPhoto == "")
+    {
+    <p class="text-center">@Model.EmpName image not available.</p>
+    }
+    else
+    {
+    <p class="text-center"><img class="EmpImg" src="@Url.Content(@Model.EmpPhoto)" alt="@Model.EmpName" /></p>
+
+    }
+
+       <table class="table">
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpID, "Employee ID")</p></td>
+            <td><p class="tab-content">@Html.DisplayFor(model => model.EmpID)</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpName, "Employee Name")</p></td>
+            <td><p class="tab-content">@Html.DisplayFor(model => model.EmpName)</p></td>
+        </tr>
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpEmail, "Employee Email")</p></td>
+            <td><p class="tab-content">@Html.DisplayFor(model => model.EmpEmail)</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpDeptID, "Employee Department ID")</p></td>
+            <td><p class="tab-content">@Html.DisplayFor(model => model.EmpDeptID)</p></td>
+        </tr>
+
+        <tr>
+            <td><p class="tab-content">@Html.LabelFor(model => model.EmpContactNo, "Employee Contact No")</p></td>
+            <td><p class="tab-content">@Html.DisplayFor(model => model.EmpContactNo)</p></td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+            <p class="text-center">@Html.ActionLink("Back to List", "Details", new { id = Model.EmpDeptID })
+        <input type="submit" value="Delete" class="btn btn-primary tab-content" /> </p>
+        <br />
+
+    }
+</div>
+    </div>

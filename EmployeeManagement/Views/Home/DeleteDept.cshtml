@@ -1,0 +1,41 @@
+﻿@model EmployeeManagement.Models.tblDept1
+
+@{
+    ViewBag.Title = "DeleteDept";
+}
+
+<div class="Index">
+    <h2 class="text-center">Delete Department</h2>
+
+    <h3 class="text-center">Are you sure you want to delete this?</h3>
+    <div>
+        <h4 class="text-center">Department</h4>
+
+        <table class="table">
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.DeptID, "Department ID")</p></td>
+                <td><p class="tab-content">@Html.DisplayFor(model => model.DeptID)</p></td>
+            </tr>
+
+            <tr>
+                <td><p class="tab-content">@Html.LabelFor(model => model.DeptName, "Department Name")</p></td>
+                <td><p class="tab-content">@Html.DisplayFor(model => model.DeptName)</p></td>
+            </tr>
+        </table>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p class="text-center">
+                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Delete" class="btn btn-primary tab-content" />
+            </p>
+            <br />
+
+        }
+    </div>
+</div>
+
+
+

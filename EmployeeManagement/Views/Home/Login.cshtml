@@ -1,0 +1,126 @@
+﻿@model EmployeeManagement.Models.tblUser1
+
+@{
+    ViewBag.Title = "Login";
+}
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+        @Html.AntiForgeryToken()    // to prevent CSRF Attack
+        @Html.ValidationSummary(true)
+
+    if (@ViewBag.Message != null)
+        {
+        <div style="border:1px solid">
+            @ViewBag.Message
+        </div>
+        }
+
+        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-4 form-box img-responsive">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3 class="tab-content" style="color:white">Login to Employee Management System.</h3>
+                                    <p class="tab-content" style="color:white">Enter your username and password to log on:</p>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <div class="form-group">
+                                    <p class="tab-content">@Html.TextBoxFor(a => a.UserName, new { placeholder = "User Name" })</p>
+                                    <p class="tab-content">@Html.ValidationMessageFor(a => a.UserName)</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <p class="tab-content">@Html.TextBoxFor(a => a.Password, new { placeholder = "Password", type = "Password" })</p>
+                                    @Html.ValidationMessageFor(a => a.Password)
+                                </div>
+
+                                <button type="submit" class="btn btn-primary tab-content" style="margin-bottom:5%">Sign in!</button>
+                                <p style="color:white" class="tab-content">Please use <b>User Name : <a style="color:yellow">admin</a> & Password: <a style="color:yellow">12345</a></b> to login.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            @*<table>
+                <tr>
+                    <td>@Html.LabelFor(a => a.UserName)</td>
+                    <td>@Html.TextBoxFor(a => a.UserName)</td>
+                    <td>@Html.ValidationMessageFor(a => a.UserName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(a => a.Password)</td>
+                    <td>@Html.TextBoxFor(a => a.Password)</td>
+                    <td>@Html.ValidationMessageFor(a => a.Password)</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login" /></td>
+                    <td></td>
+                </tr>
+            </table>*@
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

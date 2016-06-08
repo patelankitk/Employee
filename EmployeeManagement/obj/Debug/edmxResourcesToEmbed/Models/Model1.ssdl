@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMPSYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblDept1">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeptName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEmp1">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpDOB" Type="date" />
+    <Property Name="EmpGender" Type="nchar" MaxLength="10" />
+    <Property Name="EmpEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpDeptName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpSalary" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpPhoto" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblUser1">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EMPSYSModelStoreContainer">
+    <EntitySet Name="tblDept1" EntityType="Self.tblDept1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmp1" EntityType="Self.tblEmp1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser1" EntityType="Self.tblUser1" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

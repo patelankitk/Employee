@@ -1,0 +1,90 @@
+﻿/*body {*/
+    /*padding-top: 50px;*/
+    /*padding-bottom: 20px;*/
+
+    /*background: url('../Images/5.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size:cover; 
+}*/
+
+ html, body {
+    margin: 0;
+    padding: 0;
+
+    background: #000000 url('../Images/5.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    width: 100%;
+    height: auto !important;
+    min-height:100%;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+td{
+    text-align:left;
+}
+.form{
+
+}
+
+.form-box{
+    /*position:absolute center;
+    right:25%;
+    margin-top:8%;
+    margin-left:8%;
+    margin-bottom:22%;
+    background-color:black;
+    opacity:.7;   
+    border-radius:10px;*/   
+
+    position:absolute;
+    right:30%;
+    margin-top:12%;
+    margin-bottom:21%;
+    background-color:black;
+    border-radius:10px;
+    opacity:.7;
+    
+}
+.Index{
+    margin-top:7%;
+    background-size:cover;
+    background-color:white;
+    border-radius:10px; 
+    min-height:480px;
+    padding-top:10px;
+    padding-bottom:10px;  
+}
+.table{
+    width:90%;
+    /*margin-left:5%;
+    margin-right:5%;*/
+}
+.tab-content{
+    margin-left:5%;
+}
+.text-centre{
+}
+.contianer-right{
+    margin-right:90%;
+}
+.EmpImg{
+    max-height:150px;
+    max-width:200px;
+}
+
+
+
